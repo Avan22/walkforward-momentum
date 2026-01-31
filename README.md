@@ -28,3 +28,9 @@ A production-style research MVP for walk-forward momentum strategy evaluation.
 ```bash
 python3 scripts/fetch_stooq.py SPY QQQ IWM EFA TLT GLD
 
+## Quickstart
+
+```bash
+docker compose up --build
+./scripts/run_demo.sh
+
