@@ -1,0 +1,19 @@
+services:
+  api:
+    build: ./apps/api
+    ports:
+      - "8000:8000"
+    environment:
+      - RUNS_DIR=/app/runs
+    volumes:
+      - ./runs:/app/runs
+      - ./data:/app/data
+
+  web:
+    build: ./apps/web
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASE=http://localhost:8000
+    depends_on:
+      - api
